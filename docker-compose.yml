@@ -1,0 +1,15 @@
+services:                          # η λίστα με τα containers
+  postgres:                        # το όνομα του service
+    image: postgres:16             # κατέβασε έτοιμη Postgres, έκδοση 16
+    container_name: sales_postgres # το όνομα που βλέπεις στο docker ps
+    environment:                   # οι ρυθμίσεις που δίνουμε στην Postgres
+      POSTGRES_USER: ${POSTGRES_USER}          # από το .env
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # από το .env
+      POSTGRES_DB: ${POSTGRES_DB}              # από το .env
+    ports:
+      - "5441:5432"                # έξω (Windows) : μέσα (container)
+    volumes:
+      - pg_data:/var/lib/postgresql/data   # εκεί μένουν τα δεδομένα
+
+volumes:                           # δήλωση του «δίσκου»
+  pg_data:
