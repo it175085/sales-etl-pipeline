@@ -102,7 +102,13 @@ The table is created by `sql/create_tables.sql` with explicit types and constrai
 - **Accessories** have the highest average order value (€26.29), snacks the lowest (€6.47)
 - **August** was the best month (€489.20) and **May** the weakest (€262.30)
 - **Card** is used in more than half of all orders
+
 ## How to run
+
+```bash
+# 0. Download the project
+git clone https://github.com/it175085/sales-etl-pipeline.git
+cd sales-etl-pipeline
  
 **Requirements:** Python 3.11+, Docker Desktop
  
