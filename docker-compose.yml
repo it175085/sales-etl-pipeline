@@ -10,6 +10,7 @@ services:                          # η λίστα με τα containers
       - "5441:5432"                # έξω (Windows) : μέσα (container)
     volumes:
       - pg_data:/var/lib/postgresql/data   # εκεί μένουν τα δεδομένα
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/01_create_tables.sql   # ← ΝΕΑ
 
 volumes:                           # δήλωση του «δίσκου»
   pg_data:
